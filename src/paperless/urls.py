@@ -19,7 +19,7 @@ from drf_spectacular.views import SpectacularSwaggerView
 from rest_framework.routers import DefaultRouter
 
 #Nuevo - Daraly
-from paperless.custom_view import documentos_por_area_y_usuario, file_extensions
+from paperless.custom_view import documentos_por_area_y_usuario, file_extensions, user_documents_sizes,user_total_storage
 
 
 
@@ -108,6 +108,16 @@ urlpatterns = [
                     r"^custom/extensiones/$",
                     file_extensions,
                     name="file_extensions"
+                ),                
+                  re_path(
+                    r"^custom/tamanios-documentos/$",
+                    user_documents_sizes,
+                    name="user_documents_sizes"
+                ),
+                re_path(
+                    r"^custom/total-almacenamiento/$",
+                    user_total_storage,
+                    name="user_total_storage"
                 ),
                 re_path(
                     "^search/",
