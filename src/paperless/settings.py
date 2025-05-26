@@ -657,8 +657,8 @@ EMAIL_CERTIFICATE_FILE = __get_optional_path("PAPERLESS_EMAIL_CERTIFICATE_LOCATI
 def _parse_db_settings() -> dict:
     databases = {
         "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(DATA_DIR, "db.sqlite3"),
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.path.join(DATA_DIR, "db.postgresql"),
             "OPTIONS": {},
         },
     }
